@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cursed Piano</title>
+<style>
+  body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .piano {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .key {
+    width: 50px;
+    height: 200px;
+    background-color: #333;
+    border: 1px solid #555;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  .key:hover {
+    background-color: #666;
+  }
+  .weird-effect {
+    animation: shake 0.5s infinite alternate;
+  }
+  @keyframes shake {
+    from {
+      transform: rotateZ(5deg);
+    }
+    to {
+      transform: rotateZ(-5deg);
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>The Cursed Piano</h1>
+  <div class="piano">
+    <div class="key" onclick="playCursedSound('cursed1.mp3'); addWeirdEffect(this)"></div>
+    <div class="key sharp" onclick="playCursedSound('cursed2.mp3'); addWeirdEffect(this)"></div>
+    <div class="key" onclick="playCursedSound('cursed3.mp3'); addWeirdEffect(this)"></div>
+    <div class="key sharp" onclick="playCursedSound('cursed4.mp3'); addWeirdEffect(this)"></div>
+    <div class="key" onclick="playCursedSound('cursed5.mp3'); addWeirdEffect(this)"></div>
+    <div class="key" onclick="playCursedSound('cursed6.mp3'); addWeirdEffect(this)"></div>
+    <div class="key sharp" onclick="playCursedSound('cursed7.mp3'); addWeirdEffect(this)"></div>
+    <div class="key" onclick="playCursedSound('cursed8.mp3'); addWeirdEffect(this)"></div>
+    <div class="key sharp" onclick="playCursedSound('cursed9.mp3'); addWeirdEffect(this)"></div>
+    <div class="key" onclick="playCursedSound('cursed10.mp3'); addWeirdEffect(this)"></div>
+    <div class="key sharp" onclick="playCursedSound('cursed11.mp3'); addWeirdEffect(this)"></div>
+    <div class="key" onclick="playCursedSound('cursed12.mp3'); addWeirdEffect(this)"></div>
+    <!-- Add more keys as needed -->
+  </div>
+  <script>
+    function playCursedSound(sound) {
+      var audio = new Audio(sound);
+      audio.play();
+      // You can add more spooky effects or actions here!
+    }
+
+    function addWeirdEffect(element) {
+      element.classList.add('weird-effect');
+      setTimeout(() => {
+        element.classList.remove('weird-effect');
+      }, 1000); // Remove the weird effect after 1 second
+    }
+  </script>
+</body>
+</html>
